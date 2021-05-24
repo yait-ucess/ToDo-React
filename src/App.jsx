@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import ColorfulMessage from "./components/ColorfulMessage";
 
 const App = () => {
+  console.log("最初");
   const [num, setNum] = useState(0);
   const [faceShowFlag, setFaceShowFlag] = useState(true);
   const onClickCountUp = () => {
@@ -11,6 +12,12 @@ const App = () => {
   const onClickSwitchShowFlag = () => {
     setFaceShowFlag(!faceShowFlag);
   };
+
+  if (num % 3 === 0) {
+    setFaceShowFlag(true);
+  } else {
+    setFaceShowFlag(false);
+  }
 
   return (
     <>
