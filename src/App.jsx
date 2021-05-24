@@ -14,15 +14,15 @@ const App = () => {
   };
 
   useEffect(() => {
-    console.log("use");
-  }, []);
-  if (num > 0) {
-    if (num % 3 === 0) {
-      faceShowFlag || setFaceShowFlag(true);
-    } else {
-      faceShowFlag && setFaceShowFlag(false);
+    if (num > 0) {
+      if (num % 3 === 0) {
+        faceShowFlag || setFaceShowFlag(true);
+      } else {
+        faceShowFlag && setFaceShowFlag(false);
+      }
     }
-  }
+  }, [num]);
+
   return (
     <>
       <h1 style={{ color: "red" }}>Hello</h1>
