@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ColorfulMessage from "./components/ColorfulMessage";
 
 const App = () => {
@@ -13,6 +13,9 @@ const App = () => {
     setFaceShowFlag(!faceShowFlag);
   };
 
+  useEffect(() => {
+    console.log("use");
+  }, []);
   if (num > 0) {
     if (num % 3 === 0) {
       faceShowFlag || setFaceShowFlag(true);
