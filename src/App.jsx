@@ -4,7 +4,7 @@ import ColorfulMessage from "./components/ColorfulMessage";
 const App = () => {
   console.log("最初");
   const [num, setNum] = useState(0);
-  const [faceShowFlag, setFaceShowFlag] = useState(true);
+  const [faceShowFlag, setFaceShowFlag] = useState(false);
   const onClickCountUp = () => {
     setNum(num + 1);
   };
@@ -13,12 +13,13 @@ const App = () => {
     setFaceShowFlag(!faceShowFlag);
   };
 
-  if (num % 3 === 0) {
-    setFaceShowFlag(true);
-  } else {
-    setFaceShowFlag(false);
+  if (num > 0) {
+    if (num % 3 === 0) {
+      faceShowFlag || setFaceShowFlag(true);
+    } else {
+      faceShowFlag && setFaceShowFlag(false);
+    }
   }
-
   return (
     <>
       <h1 style={{ color: "red" }}>Hello</h1>
