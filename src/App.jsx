@@ -13,6 +13,7 @@ export const App = () => {
   const onChangeTodoText = (event) => setTodoText(event.target.value);
 
   const onClickAdd = () => {
+    if (todoText === "") return;
     const newTodos = [...incompleteTodos, todoText];
     setIncompleteTodos(newTodos);
     setTodoText("");
