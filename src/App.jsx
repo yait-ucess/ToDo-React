@@ -10,10 +10,16 @@ export const App = () => {
 
   const [completeTodos, setCompleteTodos] = useState(["確率論的思考"]);
 
+  const onChangeTodoText = (event) => setTodoText(event.target.value);
+
   return (
     <>
       <div className="input-area">
-        <input placeholder="ToDoを入力" value={todoText} />
+        <input
+          placeholder="ToDoを入力"
+          value={todoText}
+          onChange={onChangeTodoText}
+        />
         <button>追加</button>
       </div>
       <div className="incomplete-area">
