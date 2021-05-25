@@ -15,6 +15,7 @@ export const App = () => {
   const onClickAdd = () => {
     const newTodos = [...incompleteTodos, todoText];
     setIncompleteTodos(newTodos);
+    setTodoText("");
   };
 
   return (
