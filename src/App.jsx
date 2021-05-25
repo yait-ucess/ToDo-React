@@ -1,41 +1,41 @@
-/* eslint react-hooks/exhaustive-deps: off */
-import React, { useEffect, useState } from "react";
-import ColorfulMessage from "./components/ColorfulMessage";
+import React from "react";
+import "./style.css";
 
-const App = () => {
-  console.log("最初");
-  const [num, setNum] = useState(0);
-  const [faceShowFlag, setFaceShowFlag] = useState(false);
-  const onClickCountUp = () => {
-    setNum(num + 1);
-  };
-
-  const onClickSwitchShowFlag = () => {
-    setFaceShowFlag(!faceShowFlag);
-  };
-
-  useEffect(() => {
-    if (num > 0) {
-      if (num % 3 === 0) {
-        faceShowFlag || setFaceShowFlag(true);
-      } else {
-        faceShowFlag && setFaceShowFlag(false);
-      }
-    }
-  }, [num]);
-
+export const App = () => {
   return (
     <>
-      <h1 style={{ color: "red" }}>Hello</h1>
-      <ColorfulMessage color="blue">You</ColorfulMessage>
-      <ColorfulMessage color="pink">Are</ColorfulMessage>
-      <button onClick={onClickCountUp}>カウントアップ</button>
-      <br />
-      <button onClick={onClickSwitchShowFlag}>on/off</button>
-      <p>{num}</p>
-      {faceShowFlag && <p>(๑˃̵ᴗ˂̵)</p>}
+      <div>
+        <input placeholder="ToDoを入力" />
+        <button>追加</button>
+      </div>
+      <div>
+        <p>未完了のToDO</p>
+        <ul>
+          <li>
+            <div>
+              <p>快感回路</p>
+              <button>完了</button>
+              <button>削除</button>
+            </div>
+            <div>
+              <p>人生は20代で決まる</p>
+              <button>完了</button>
+              <button>削除</button>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <p>完了のToDO</p>
+        <ul>
+          <li>
+            <div>
+              <p>確率論的思考</p>
+              <button>戻す</button>
+            </div>
+          </li>
+        </ul>
+      </div>
     </>
   );
-};
-
-export default App;
+}
