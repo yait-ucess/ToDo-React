@@ -13,7 +13,7 @@ const style = {
 export const CompleteTodos = (props) => {
   const { todos, onclickBack } = props;
   return (
-    <div style={style}>
+    <div style={style} className="complete">
       <p className="title">完了のToDO</p>
       <ul>
         <li>

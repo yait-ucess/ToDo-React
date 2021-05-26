@@ -21,7 +21,7 @@ export const InputTodo = (props) => {
         value={todoText}
         onChange={onChange}
       />
-      <button disabled={disabled} onClick={onClick}>
+      <button disabled={disabled} onClick={onClick} className="input-btn">
         追加
       </button>
     </div>

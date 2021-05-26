@@ -1,7 +1,7 @@
 import React from "react";
 
 const style = {
-  backgroundColor: "#ffffe0",
+  backgroundColor: "white",
   width: "50%",
   minHeight: "350px",
   height: "auto",
@@ -13,7 +13,7 @@ const style = {
 export const IncompleteTodos = (props) => {
   const { todos, onclickComplete, onClickDelete } = props;
   return (
-    <div style={style}>
+    <div style={style} className="incomplete">
       <p className="title">未完了のToDO</p>
       <ul>
         <li>

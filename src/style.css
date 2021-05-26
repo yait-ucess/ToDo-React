@@ -20,6 +20,10 @@ button {
   padding: 4px 16px;
 }
 
+.input-btn {
+  width: 300px;
+}
+
 li {
   list-style: none;
 }
