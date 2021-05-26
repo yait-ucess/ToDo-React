@@ -26,15 +26,6 @@ button:hover {
   cursor: pointer;
 }
 
-.incomplete-area {
-  background-color: #ffffe0;
-  width: auto;
-  min-height: 200px;
-  padding: 8px;
-  margin: 8px;
-  border-radius: 8px;
-}
-
 .complete-area {
   background-color: #c6ffe2;
   width: auto;
