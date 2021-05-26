@@ -3,12 +3,9 @@ import "./style.css";
 
 export const App = () => {
   const [todoText, setTodoText] = useState("");
-  const [incompleteTodos, setIncompleteTodos] = useState([
-    "快感回路",
-    "人生は20代で決まる"
-  ]);
+  const [incompleteTodos, setIncompleteTodos] = useState([]);
 
-  const [completeTodos, setCompleteTodos] = useState(["確率論的思考"]);
+  const [completeTodos, setCompleteTodos] = useState([]);
 
   const onChangeTodoText = (event) => setTodoText(event.target.value);
 
@@ -32,6 +29,15 @@ export const App = () => {
     const newCompleteTodos = [...completeTodos, incompleteTodos[index]];
     setIncompleteTodos(newIncompleteTodos);
     setCompleteTodos(newCompleteTodos);
+  };
+
+  const onclickBack = (index) => {
+    const newCompleteTodos = [...completeTodos];
+    newCompleteTodos.splice(index, 1);
+
+    const newIncompleteTodos = [...incompleteTodos, completeTodos[index]];
+    setCompleteTodos(newCompleteTodos);
+    setIncompleteTodos(newIncompleteTodos);
   };
 
   return (
@@ -64,11 +70,11 @@ export const App = () => {
         <p className="title">完了のToDO</p>
         <ul>
           <li>
-            {completeTodos.map((todo) => {
+            {completeTodos.map((todo, index) => {
               return (
                 <div key={todo} className="list-row">
                   <p>{todo}</p>
-                  <button>戻す</button>
+                  <button onClick={() => onclickBack(index)}>戻す</button>
                 </div>
               );
             })}
