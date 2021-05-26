@@ -54,12 +54,14 @@ export const App = () => {
       {incompleteTodos.length >= 5 && (
         <p style={{ color: "red" }}>ToDoを達成しましょう！</p>
       )}
-      <IncompleteTodos
-        todos={incompleteTodos}
-        onclickComplete={onclickComplete}
-        onClickDelete={onClickDelete}
-      />
-      <CompleteTodos todos={completeTodos} onclickBack={onclickBack} />
+      <div className="todo-field">
+        <IncompleteTodos
+          todos={incompleteTodos}
+          onclickComplete={onclickComplete}
+          onClickDelete={onClickDelete}
+        />
+        <CompleteTodos todos={completeTodos} onclickBack={onclickBack} />
+      </div>
     </>
   );
 };

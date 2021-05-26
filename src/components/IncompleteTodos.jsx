@@ -2,8 +2,9 @@ import React from "react";
 
 const style = {
   backgroundColor: "#ffffe0",
-  width: "auto",
-  minHeight: "200px",
+  width: "50%",
+  minHeight: "350px",
+  height: "auto",
   padding: "8px",
   margin: "8px",
   borderRadius: "8px"
